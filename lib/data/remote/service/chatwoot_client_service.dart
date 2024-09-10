@@ -59,8 +59,8 @@ class ChatwootClientServiceImpl extends ChatwootClientService {
             ChatwootClientExceptionType.SEND_MESSAGE_FAILED);
       }
     } on DioError catch (e) {
-      throw ChatwootClientException(
-          e.message, ChatwootClientExceptionType.SEND_MESSAGE_FAILED);
+      throw ChatwootClientException(e.message.toString(),
+          ChatwootClientExceptionType.SEND_MESSAGE_FAILED);
     }
   }
 
@@ -80,8 +80,8 @@ class ChatwootClientServiceImpl extends ChatwootClientService {
             ChatwootClientExceptionType.GET_MESSAGES_FAILED);
       }
     } on DioError catch (e) {
-      throw ChatwootClientException(
-          e.message, ChatwootClientExceptionType.GET_MESSAGES_FAILED);
+      throw ChatwootClientException(e.message.toString(),
+          ChatwootClientExceptionType.GET_MESSAGES_FAILED);
     }
   }
 
@@ -100,7 +100,7 @@ class ChatwootClientServiceImpl extends ChatwootClientService {
       }
     } on DioError catch (e) {
       throw ChatwootClientException(
-          e.message, ChatwootClientExceptionType.GET_CONTACT_FAILED);
+          e.message.toString(), ChatwootClientExceptionType.GET_CONTACT_FAILED);
     }
   }
 
@@ -120,8 +120,8 @@ class ChatwootClientServiceImpl extends ChatwootClientService {
             ChatwootClientExceptionType.GET_CONVERSATION_FAILED);
       }
     } on DioError catch (e) {
-      throw ChatwootClientException(
-          e.message, ChatwootClientExceptionType.GET_CONVERSATION_FAILED);
+      throw ChatwootClientException(e.message.toString(),
+          ChatwootClientExceptionType.GET_CONVERSATION_FAILED);
     }
   }
 
@@ -140,8 +140,8 @@ class ChatwootClientServiceImpl extends ChatwootClientService {
             ChatwootClientExceptionType.UPDATE_CONTACT_FAILED);
       }
     } on DioError catch (e) {
-      throw ChatwootClientException(
-          e.message, ChatwootClientExceptionType.UPDATE_CONTACT_FAILED);
+      throw ChatwootClientException(e.message.toString(),
+          ChatwootClientExceptionType.UPDATE_CONTACT_FAILED);
     }
   }
 
@@ -161,8 +161,8 @@ class ChatwootClientServiceImpl extends ChatwootClientService {
             ChatwootClientExceptionType.UPDATE_MESSAGE_FAILED);
       }
     } on DioError catch (e) {
-      throw ChatwootClientException(
-          e.message, ChatwootClientExceptionType.UPDATE_MESSAGE_FAILED);
+      throw ChatwootClientException(e.message.toString(),
+          ChatwootClientExceptionType.UPDATE_MESSAGE_FAILED);
     }
   }
 

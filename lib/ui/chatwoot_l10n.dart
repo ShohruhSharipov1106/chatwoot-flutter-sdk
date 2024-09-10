@@ -29,23 +29,36 @@ class ChatwootL10n extends ChatL10n {
   /// Message when agent resolves conversation
   final String conversationResolvedMessage;
 
+  final String and;
+
+  final String others;
+  final String unreadMessagesLabel;
+
   /// Creates a new chatwoot l10n
-  const ChatwootL10n(
-      {this.attachmentButtonAccessibilityLabel = "",
-      this.emptyChatPlaceholder = "",
-      this.fileButtonAccessibilityLabel = "",
-      this.onlineText = "Typically replies in a few hours",
-      this.offlineText = "We're away at the moment",
-      this.typingText = "typing...",
-      this.inputPlaceholder = "Type your message",
-      this.sendButtonAccessibilityLabel = "Send Message",
-      this.conversationResolvedMessage =
-          "Your ticket has been marked as resolved"})
-      : super(
-            attachmentButtonAccessibilityLabel:
-                attachmentButtonAccessibilityLabel,
-            emptyChatPlaceholder: emptyChatPlaceholder,
-            fileButtonAccessibilityLabel: fileButtonAccessibilityLabel,
-            inputPlaceholder: inputPlaceholder,
-            sendButtonAccessibilityLabel: sendButtonAccessibilityLabel);
+  const ChatwootL10n({
+    this.attachmentButtonAccessibilityLabel = "",
+    this.emptyChatPlaceholder = "",
+    this.fileButtonAccessibilityLabel = "",
+    this.onlineText = "Typically replies in a few hours",
+    this.offlineText = "We're away at the moment",
+    this.typingText = "typing...",
+    this.inputPlaceholder = "Type your message",
+    this.sendButtonAccessibilityLabel = "Send Message",
+    this.conversationResolvedMessage =
+        "Your ticket has been marked as resolved",
+    this.and = "and",
+    this.others = "others",
+    this.unreadMessagesLabel = "Unread Messages",
+  }) : super(
+          and: and,
+          attachmentButtonAccessibilityLabel:
+              attachmentButtonAccessibilityLabel,
+          emptyChatPlaceholder: emptyChatPlaceholder,
+          fileButtonAccessibilityLabel: fileButtonAccessibilityLabel,
+          inputPlaceholder: inputPlaceholder,
+          isTyping: typingText,
+          others: others,
+          sendButtonAccessibilityLabel: sendButtonAccessibilityLabel,
+          unreadMessagesLabel: unreadMessagesLabel,
+        );
 }

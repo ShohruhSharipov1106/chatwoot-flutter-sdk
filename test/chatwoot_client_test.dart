@@ -1,6 +1,7 @@
 import 'package:chatwoot_sdk/chatwoot_client.dart';
 import 'package:chatwoot_sdk/data/chatwoot_repository.dart';
 import 'package:chatwoot_sdk/data/local/entity/chatwoot_user.dart';
+import 'package:chatwoot_sdk/data/local/local_storage.dart';
 import 'package:chatwoot_sdk/data/remote/requests/chatwoot_action_data.dart';
 import 'package:chatwoot_sdk/di/modules.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -40,10 +41,12 @@ void main() {
           .thenAnswer((realInvocation) => Future.microtask(() {}));
       mockProviderContainer = ProviderContainer();
       mockProviderContainer.updateOverrides([
-        localStorageProvider
-            .overrideWithProvider((ref, param) => mockLocalStorage),
-        chatwootRepositoryProvider
-            .overrideWithProvider((ref, param) => mockRepository)
+        localStorageProvider.overrideWithProvider((param) =>
+            Provider<LocalStorage>(
+                (ref) => mockLocalStorage)), // Wrap with a Provider
+        chatwootRepositoryProvider.overrideWithProvider((param) =>
+            Provider<ChatwootRepository>(
+                (ref) => mockRepository)) // Wrap with a Provider
       ]);
       ChatwootClient.providerContainerMap.update(
           testClientInstanceKey, (_) => mockProviderContainer,
